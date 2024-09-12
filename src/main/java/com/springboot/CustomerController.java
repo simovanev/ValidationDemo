@@ -20,6 +20,6 @@ public class CustomerController {
             , BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return "customer-form";
-        }else return "customer-confitrmation";
+        }else return "customer-confirmation";
     }
 }
