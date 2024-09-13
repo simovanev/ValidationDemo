@@ -12,18 +12,21 @@
 <body>
 <i>
     Fields with asterisk (*) are required.
-</i>
+</i><p></p>
 
 <form th:action="@{/processForm}"
       th:object="${customer}"
       th:method="POST">
-    First name: <label>
-    <input type="text" th:field="*{firstName}">
-</label>
+
+    First name:
+    <label>
+        <input type="text" th:field="*{firstName}">
+    </label>
     <br><br>
-    Last name: <label>
-    <input type="text" th:field="*{lastName}">
-</label>
+    Last name:
+    <label>
+        <input type="text" th:field="*{lastName}">
+    </label>
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="*{lastName}"
           th:errorclass="error"></span>
