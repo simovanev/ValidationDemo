@@ -5,7 +5,8 @@ import jakarta.validation.constraints.*;
 public class Customer {
     @Min(value = 0,message = "must be greater or equal to zero")
     @Max(value = 10,message = "must be lower or equal to 10")
-    private int freePasses;
+    @NotNull(message = "is required")
+    private Integer freePasses;
     private String firstName;
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
@@ -32,11 +33,11 @@ public class Customer {
     }
 
 
-    public int getFreePasses() {
+    public Integer getFreePasses() {
         return freePasses;
     }
 
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
 
