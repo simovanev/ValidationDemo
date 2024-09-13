@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Customer Registration Form</title>
     <style>
-        .error{color: red}
+        .error {
+            color: red
+        }
     </style>
 </head>
 <body>
@@ -25,7 +27,14 @@
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="*{lastName}"
           th:errorclass="error"></span>
-<br><br>
+    <br><br>
+    Number of Free Passes <label>
+    <input type="text" th:field="*{freePasses}">
+</label>
+    <span th:if="${#fields.hasErrors('freePasses')}"
+          th:errors="*{freePasses}"
+          th:class="error"></span>
+    <br><br>
     <input type="submit" value="Submit">
 
 </form>
