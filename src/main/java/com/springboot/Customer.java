@@ -1,5 +1,6 @@
 package com.springboot;
 
+import com.springboot.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -7,6 +8,8 @@ public class Customer {
     @Max(value = 10,message = "must be lower or equal to 10")
     @NotNull(message = "is required")
     private Integer freePasses;
+    @CourseCode(value = "tag",message = "incorrect")
+    private String courseCode;
     private String firstName;
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
@@ -14,7 +17,13 @@ public class Customer {
     @Pattern(regexp = "^[A-Za-z0-9]{5}" ,message = "only 5 digits/numbers allowed")
     private String postalCode;
 
+    public String getCourseCode() {
+        return courseCode;
+    }
 
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     public String getFirstName() {
         return firstName;

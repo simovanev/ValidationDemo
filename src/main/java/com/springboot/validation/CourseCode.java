@@ -1,6 +1,7 @@
 package com.springboot.validation;
 
 import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -11,5 +12,10 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CourseCode {
-    //todo CourseCodeValidator class
+
+    public String value()  default "LUV";
+    public String message() default "must start with LUV";
+    public Class<?>[] groups() default{};
+    public Class<? extends Payload>[] payload() default {};
+
 }
